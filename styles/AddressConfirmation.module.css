@@ -1,0 +1,102 @@
+/* AddressConfirmation.module.css */
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .progressContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .step {
+    display: flex;
+    align-items: center;
+  }
+  
+  .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #d3d3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .activeCircle {
+    background-color: #4caf50;
+  }
+  
+  .line {
+    width: 40px;
+    height: 2px;
+    background-color: #d3d3d3;
+  }
+  
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .subheading {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .formLabel {
+    font-size: 12px; /* Smaller font size for labels */
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 5px; /* Space between label and input box */
+    text-align: left;
+    width: 100%;
+  }
+  
+  .inputBox {
+    width: 100%; /* Matches the width of the submit button */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+  }
+  
+  .inputBox:focus {
+    border-color: #4caf50;
+  }
+  
+  .submitButton {
+    width: 100%; /* Ensure uniform width for all buttons and input fields */
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: #45a049;
+  }
+  

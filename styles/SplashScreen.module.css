@@ -1,0 +1,102 @@
+/* Main splash container */
+.splashContainer {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  color: white;
+  padding: 20px; /* Add padding to prevent content from touching edges */
+}
+
+/* Logo container styling */
+.logoContainer {
+  text-align: center;
+  margin-bottom: 30px; /* Add space below the logoContainer */
+}
+
+.logoText {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* Features Section */
+.featuresSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin: 20px 0;
+  padding: 20px;
+  background: #f3f4f6; /* Light gray background */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Adjust width to stay centered */
+}
+
+.feature {
+  width: 200px;
+  text-align: center;
+  margin: 10px;
+}
+
+.feature h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1e3a8a; /* Dark blue */
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #374151; /* Dark gray */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .featuresSection {
+    flex-direction: column; /* Stack features vertically on small screens */
+    align-items: center;
+    padding: 15px;
+    width: 90%; /* Adjust width for smaller devices */
+  }
+
+  .feature {
+    width: 100%; /* Expand features to full width */
+    margin: 10px 0;
+  }
+}
+
+
+/* SplashScreen.module.css
+.splashContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    color: white;
+  }
+  
+  .logoContainer {
+    text-align: center;
+  }
+  
+  .logoText {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+   */

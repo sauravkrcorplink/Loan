@@ -1,0 +1,163 @@
+.dashboardContainer {
+    background-color: #f9f9f9; /* Light background */
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contentWrapper {
+    max-width: 800px; /* Maximum width for the content */
+    width: 90%; /* Ensures responsiveness */
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  }
+  
+  /* Profile Section */
+  .profileSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .profileWrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profileIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc; /* Placeholder for the profile image */
+    margin-right: 16px; /* Spacing between icon and mobile number */
+  }
+  
+.greeting p{
+    margin: 0px;
+}
+.bell i{
+    color: #0056b3;
+    font-size: 23px;
+}
+
+  .notificationIcon {
+    width: 24px;
+    height: 24px;
+    background-color: #ccc; /* Placeholder for the notification bell */
+    border-radius: 50%;
+  }
+  
+  /* Mobile Number and Greeting */
+  .mobileNumber {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .greeting {
+    font-size: 16px;
+    color: #666;
+    margin: 4px 0 0 0;
+  }
+  
+  /* Loan Info Section */
+  .loanInfo {
+    display: flex;
+    justify-content: space-between;
+    background: #f0f8ff; /* Light blue background */
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .loanDetail {
+    text-align: center;
+  }
+  
+  .loanLabel {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .loanValue {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+  
+  /* Instant Apply Section */
+  .instantApplySection {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .instantApplyHeading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .instantApplyDetails {
+    font-size: 14px;
+    color: #666;
+    margin: 4px 0;
+  }
+  
+  .applyButton {
+    margin-top: 16px;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .applyButton:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Removed notificationIcon styles as it's no longer needed */
+
+/* Profile Icon */
+.profileIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc; /* Placeholder for the profile image */
+    margin-right: 16px; /* Spacing between icon and mobile number */
+    cursor: pointer; /* Make the profile icon clickable */
+    transition: transform 0.2s ease; /* Smooth hover effect */
+  }
+  
+  .profileIcon:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+  }
+  
+  .profileIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Adjust size */
+    height: 50px; /* Adjust size */
+    border-radius: 50%; /* Makes the icon circular */
+    background-color: #4caf50; /* Change this to your desired background color */
+    color: white; /* Icon color */
+    font-size: 24px; /* Icon size */
+    cursor: pointer; /* Makes it clickable */
+    transition: background-color 0.3s ease; /* Adds smooth color change on hover */
+  }
+  
+  .profileIcon:hover {
+    background-color: #3e8e41; /* Slightly darker shade on hover */
+  }
+  

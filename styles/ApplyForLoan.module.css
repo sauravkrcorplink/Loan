@@ -1,0 +1,83 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    background-color: #f9f9f9;
+    height: 100vh;
+  }
+  
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+  
+  .formContainer {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .inputGroup {
+    margin-bottom: 15px;
+  }
+  
+  .label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .savedData {
+    font-size: 14px;
+    color: #007bff;
+    cursor: pointer;
+    margin-top: 5px;
+    text-decoration: underline;
+  }
+  
+  .savedData:hover {
+    color: #0056b3;
+  }
+  
+  .radioGroup {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .radioLabel {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .continueButton {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .continueButton:hover {
+    background-color: #3e8e41;
+  }
+  

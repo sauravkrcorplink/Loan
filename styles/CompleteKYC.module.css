@@ -1,0 +1,188 @@
+/* CompleteKYC.module.css */
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .progressContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .step {
+    display: flex;
+    align-items: center;
+  }
+  
+  .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #d3d3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .activeCircle {
+    background-color: #4caf50;
+  }
+  
+  .line {
+    width: 40px;
+    height: 2px;
+    background-color: #d3d3d3;
+  }
+  
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .subheading {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .exampleImage {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .image {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .highlightCircle {
+    position: absolute;
+    top: 40%; /* Adjust this value to position the circle */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 3px solid #ff0000;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  
+  .imageCaption {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  .inputGroup {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
+  
+ /* Checkbox Container */
+ .checkboxContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .checkbox {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .checkboxLabel {
+    font-size: 14px;
+  }
+  
+  .link {
+    color: #4caf50;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .continueButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .continueButton:hover {
+    background-color: #45a049;
+  }
+  
+  @media (max-width: 480px) {
+    .progressContainer {
+      flex-wrap: wrap;
+    }
+  
+    .line {
+      width: 20px;
+    }
+  }
+  
+  /* Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .closeButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .closeButton:hover {
+    background-color: #e53935;
+  }
