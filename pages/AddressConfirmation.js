@@ -9,7 +9,9 @@ export default function AddressConfirmation() {
     locality: "",
     city: "",
     state: "",
-    alternateNo: "",
+    relationType: "",
+    referenceName: "",
+    contactNo: "",
   });
 
   const router = useRouter(); // Initialize the router
@@ -102,13 +104,48 @@ export default function AddressConfirmation() {
             className={styles.inputBox}
           />
         </label>
+        <p>References</p>
+        <label className={styles.formLabel}>
+          Relation:
+          <select
+            name="relationType"
+            value={formData.relationType}
+            onChange={handleInputChange}
+            required
+            className={styles.inputBox}
+          >
+            <option value="">Select</option>
+        <option value="spouse">Spouse</option>
+        <option value="parent">Parent</option>
+        <option value="child">Child</option>
+        <option value="sibling">Sibling</option>
+        <option value="friend">Friend</option>
+        <option value="relative">Relative</option>
+        <option value="colleague">Colleague</option>
+        <option value="partner">Partner</option>
+        <option value="guardian">Guardian</option>
+        <option value="other">Other</option>
+          </select>
+        </label>
+
 
         <label className={styles.formLabel}>
-          Alternate Contact Number:
+          Name:
           <input
             type="text"
-            name="alternateNo"
-            value={formData.alternateNo}
+            name="referenceName"
+            value={formData.referenceName}
+            onChange={handleInputChange}
+            required
+            className={styles.inputBox}
+          />
+        </label>
+        <label className={styles.formLabel}>
+          Contact Number:
+          <input
+            type="number"
+            name="contactNo"
+            value={formData.contactNo}
             onChange={handleInputChange}
             required
             className={styles.inputBox}

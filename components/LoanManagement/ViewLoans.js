@@ -8,16 +8,43 @@ export default function ViewLoans() {
   return (
     <div className={styles.viewLoansContainer}>
       <div className={styles.viewLoansContent}>
+      <p>Loan ID: 1234567890</p>
         <h1 className={styles.loanAmount}>₹200,000</h1>
         <p className={styles.approvedAmount}>Approved Amount</p>
 
         <div className={styles.loanDetails}>
-          <p>
-            <strong>Disbursal Date:</strong> 01/23/2024
-          </p>
-          <p>
-            <strong>Loan Tenure:</strong> 30 Days
-          </p>
+          <div className={styles.loanForm}>
+            <div className={styles.loanFormd}>
+              <div className={styles.adjust}>
+                <p>Approved Amt:</p>
+                <p>₹ 200000.00</p>
+              </div>
+              <div className={styles.adjust}>
+                <p>Disbursal:</p>
+                <p>₹ 100000</p>
+              </div>
+            </div>
+            <div className={styles.loanFormd}>
+              <div className={styles.adjust}>
+                <p>Processing Fee+Tax</p>
+                <p>₹ 25000.00</p>
+              </div>
+              <div className={styles.adjust}>
+                <p>Loan Disbursal Date:</p>
+                <p>27/01/2025</p>
+              </div>
+            </div>
+            <div className={styles.loanFormd}>
+              <div className={styles.adjust}>
+              <p>Repayment Date:</p>
+              <p>27/01/2025</p>
+              </div>
+              <div className={styles.adjust}>
+                <p>Tenure:</p>
+                <p>30 Days</p>
+              </div>
+            </div>
+          </div>
 
           <h3 className={styles.repaymentScheduleTitle}>Repayment Schedule</h3>
           <p className={styles.repaymentDetails}>
@@ -51,7 +78,6 @@ export default function ViewLoans() {
   );
 }
 
-
 // import { useRouter } from "next/router";
 // import styles from "../../styles/LoanManagement.module.css";
 // import Image from "next/image"; // Import Image component for any images
@@ -64,7 +90,7 @@ export default function ViewLoans() {
 //       <div className={styles.viewLoansContent}>
 //         <h1 className={styles.loanAmount}>₹200,000</h1>
 //         <p className={styles.approvedAmount}>Approved Amount</p>
-        
+
 //         <div className={styles.loanDetails}>
 //           <p>
 //             <strong>Disbursal Date:</strong> 01/23/2024
@@ -72,12 +98,12 @@ export default function ViewLoans() {
 //           <p>
 //             <strong>Loan Tenure:</strong> 30 Days
 //           </p>
-          
+
 //           <h3 className={styles.repaymentScheduleTitle}>Repayment Schedule</h3>
 //           <p className={styles.repaymentDetails}>
 //             Due Date: 10th Aug 2024 | Amount: ₹6,500.00
 //           </p>
-          
+
 //           <div className={styles.checkboxContainer}>
 //             <input type="checkbox" id="terms" className={styles.checkbox} />
 //             <label htmlFor="terms" className={styles.checkboxLabel}>
@@ -104,7 +130,6 @@ export default function ViewLoans() {
 //     </div>
 //   );
 // }
-
 
 // // components/ViewLoans.js
 // import { useRouter } from "next/router";

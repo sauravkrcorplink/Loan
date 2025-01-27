@@ -480,19 +480,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(135deg, #6a11cb, #2575fc); /* Soft blue gradient */
   }
   
   /* View Loans Content */
   .viewLoansContent {
     background: #fff;
-    padding: 40px;
+    padding: 5px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 100%;
-    max-width: 600px;
+    max-width: 450px;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
   
   /* Loan Amount */
@@ -500,14 +502,14 @@
     font-size: 36px;
     font-weight: bold;
     color: #007bff;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
   }
   
   /* Approved Amount Text */
   .approvedAmount {
     font-size: 18px;
     color: #6c757d;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
   }
   
   /* Loan Details */
@@ -516,6 +518,39 @@
     margin: 20px auto;
     max-width: 450px;
   }
+
+  .loanForm {
+    margin: 0 auto; /* Center the form horizontally */
+  background-color: #26a62c;
+  max-width: 350px;
+  padding: 0px; /* Add padding for better spacing */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center the content inside */
+  }
+
+  .loanFormd {
+    display: flex;
+  justify-content: space-between; /* Align items on left and right */
+  margin-bottom: 15px; /* Add spacing between rows */
+  }
+  .adjust {
+    flex: 1; /* Ensure even spacing for both columns */
+    padding: 0 10px; /* Add padding between columns */
+    text-align: left; /* Align text inside each column to the left */
+  }
+  .adjust p {
+    margin: 5px 0; /* Add consistent spacing between paragraphs */
+    font-size: 14px;
+    color: #fff; /* Set text color for contrast */
+  }
+
+  /* width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   
   /* Repayment Schedule Section */
   .repaymentScheduleTitle {
