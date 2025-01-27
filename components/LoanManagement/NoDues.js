@@ -1,7 +1,9 @@
 import styles from "../../styles/LoanManagement.module.css";
+import { useRouter } from "next/router";
 import Image from "next/image"; // Import the Image component from next/image
 
 export default function NoDues() {
+  const router = useRouter();
   return (
     <div className={styles.noDuesContainer}>
       {/* Icon Section */}
@@ -22,6 +24,12 @@ export default function NoDues() {
           You don’t have any active loan for now.
         </p>
       </div>
+      <button
+          className={styles.backButton}
+          onClick={() => router.push("/dashboard")}
+        >
+          Back to Dashboard
+        </button>
     </div>
   );
 }

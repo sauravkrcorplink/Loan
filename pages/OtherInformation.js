@@ -61,16 +61,19 @@ export default function AddressConfirmation() {
       {/* Form */}
       <form onSubmit={handleSubmit} className={styles.form}>
       <label className={styles.formLabel}>
-           Residence Type:
-           <input
-             type="text"
-             name="resourceType"
-             value={formData.resourceType}
-             onChange={handleInputChange}
-             required
-             className={styles.inputBox}
-           />
-         </label>
+          Residence Type:
+          <select
+            name="residenceType"
+            value={formData.residenceType}
+            onChange={handleInputChange}
+            required
+            className={styles.inputBox}
+          >
+            <option value="">Select</option>
+            <option value="Rental">Rental</option>
+            <option value="Owned">Owned</option>
+          </select>
+        </label>
 
          <label className={styles.formLabel}>
            Company Name:
@@ -178,10 +181,10 @@ Education Qualification:
              className={styles.inputBox}
            >
              <option value="">Select</option>
-             <option value="Male">Married</option>
-             <option value="Female">Single</option>
-             <option value="Female">Widowed</option>
-             <option value="Female">Separated</option>
+             <option value="Married">Married</option>
+             <option value="Single">Single</option>
+             <option value="Widowed">Widowed</option>
+             <option value="Separated">Separated</option>
            </select>
          </label>
 

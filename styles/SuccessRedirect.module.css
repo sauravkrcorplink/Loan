@@ -1,0 +1,10 @@
+/* http://localhost:3001/SuccessRedirect */
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }

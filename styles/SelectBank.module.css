@@ -1,0 +1,42 @@
+/* styles/SelectBank.module.css */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .formLabel {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .inputBox {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .proceedButton {
+    padding: 10px 20px;
+    background-color: #0070f3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .proceedButton:hover {
+    background-color: #005bb5;
+  }
+  
