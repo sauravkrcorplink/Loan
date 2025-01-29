@@ -1,0 +1,155 @@
+.viewLoansContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #5000b9, #8e2de2);
+    padding: 20px;
+  }
+  
+  .viewLoansContent {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .loanAmount {
+    color: #0066ff;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .approvedAmount {
+    color: #777;
+    font-size: 14px;
+    /* margin-bottom: 15px; */
+  }
+  
+  /* Green Loan Details Box (Now Only Includes Loan Details) */
+  /* .loanDetails {
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-bottom: 0;
+  } */
+  
+  .loanForm {
+    display: flex;
+    flex-direction: column;
+    background: #12a754;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+  .loanFormd {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+  
+  /* .adjust {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  } */
+  .adjustLeft {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  .adjustRight {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+  
+  /* Repayment Schedule Section (Now Fully Separate) */
+  .repaymentScheduleContainer {
+    background: white;
+    padding: 15px;
+    margin-top: 10px; /* Space between green box and this section */
+    text-align: left;
+  }
+  
+  .repaymentScheduleTitle {
+    color: red;
+    font-size: 16px;
+    margin: 0;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+  
+  .repaymentDetails {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  /* Checkbox and Terms */
+  .checkboxContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 15px 0;
+    justify-content: flex-start;
+  }
+  
+  .checkbox {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .checkboxLabel {
+    font-size: 14px;
+  }
+  
+  .checkboxLabel strong {
+    font-weight: bold;
+  }
+  
+  /* Buttons (Now Stacked Vertically) */
+  .buttonContainer {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .submitButton {
+    background: #5e10cc;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .declineButton {
+    background: #f53c3c;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.7;
+  }
+  
+  .submitButton:hover,
+  .declineButton:hover {
+    opacity: 1;
+  }
+  

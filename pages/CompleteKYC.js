@@ -65,13 +65,13 @@ export default function CompleteKYC() {
       {/* PAN Input Field */}
       <div className={styles.inputGroup}>
         <label htmlFor="panNumber" className={styles.label}>
-          Enter PAN
+          Enter PAN Number
         </label>
         <input
           id="panNumber"
           type="text"
           className={styles.input}
-          placeholder="Enter PAN (e.g., AAAPA1234A)"
+          placeholder="Enter PAN Number (e.g., AAAPA1234A)"
           value={panNumber}
           onChange={(e) => setPanNumber(e.target.value.toUpperCase())} // Ensure uppercase
         />

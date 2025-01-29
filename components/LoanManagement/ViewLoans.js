@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import styles from "../../styles/LoanManagement.module.css";
+import styles from "../../styles/ViewLoans.module.css";
 import Image from "next/image"; // Import Image component for any images
 
 export default function ViewLoans() {
@@ -8,38 +8,38 @@ export default function ViewLoans() {
   return (
     <div className={styles.viewLoansContainer}>
       <div className={styles.viewLoansContent}>
-      <p>Loan ID: 1234567890</p>
+      <p style={{fontSize:'14px'}}>Loan ID: 1234567890</p>
         <h1 className={styles.loanAmount}>₹200,000</h1>
         <p className={styles.approvedAmount}>Approved Amount</p>
 
         <div className={styles.loanDetails}>
           <div className={styles.loanForm}>
             <div className={styles.loanFormd}>
-              <div className={styles.adjust}>
+              <div className={styles.adjustLeft}>
                 <p>Approved Amt:</p>
                 <p>₹ 200000.00</p>
               </div>
-              <div className={styles.adjust}>
+              <div className={styles.adjustRight}>
                 <p>Disbursal:</p>
                 <p>₹ 100000</p>
               </div>
             </div>
             <div className={styles.loanFormd}>
-              <div className={styles.adjust}>
+              <div className={styles.adjustLeft}>
                 <p>Processing Fee+Tax</p>
                 <p>₹ 25000.00</p>
               </div>
-              <div className={styles.adjust}>
+              <div className={styles.adjustRight}>
                 <p>Loan Disbursal Date:</p>
                 <p>27/01/2025</p>
               </div>
             </div>
             <div className={styles.loanFormd}>
-              <div className={styles.adjust}>
+              <div className={styles.adjustLeft}>
               <p>Repayment Date:</p>
               <p>27/01/2025</p>
               </div>
-              <div className={styles.adjust}>
+              <div className={styles.adjustRight}>
                 <p>Tenure:</p>
                 <p>30 Days</p>
               </div>

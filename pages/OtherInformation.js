@@ -189,9 +189,9 @@ Education Qualification:
          </label>
 
          <label className={styles.formLabel}>
-           Work Experience:
+           Work Experience in a Year:
            <input
-             type="text"
+             type="number"
              name="workExperience"
              value={formData.workExperience}
              onChange={handleInputChange}

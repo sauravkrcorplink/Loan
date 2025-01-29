@@ -65,14 +65,14 @@
   .otpDescription,
   .otpInstruction {
     color: #666;
-    margin: 10px 0;
+    /* margin: 10px 0; */
   }
   
 /* OTP Section */
 .otpContainer {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    /* margin: 20px 0; */
     /* flex-direction: column; */
     gap: 2px;
   }
