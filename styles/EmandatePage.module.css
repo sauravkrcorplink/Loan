@@ -1,0 +1,243 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fc;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.text {
+  font-size: 14px;
+  color: #606060;
+}
+
+.bankList {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.bankItem {
+  background: #f1f3f8;
+  padding: 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.bankItem:hover {
+  background: #dce1ea;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.button {
+  background: #0052cc;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background: #003da6;
+}
+
+.otpContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.otpInput {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.resend {
+  color: #0052cc;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.resend:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.otpInputContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.otpInput {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.otpFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.resendButton {
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.resendButton:disabled {
+  color: #ccc;
+}
+
+.timer {
+  font-size: 16px;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* OTP Section */
+.otpContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.otpTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.otpSubtitle {
+  font-size: 1rem;
+  color: white;
+}
+
+.otpInstruction {
+  font-size: 1rem;
+  color: white;
+}
+
+.otpInputContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.otpInput {
+  width: 55px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+}
+
+/* Payment Method Section */
+.payment {
+  text-align: center;
+  margin-top: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.payment-method h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.payment-method button {
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 80%;
+  max-width: 300px;
+}
+
+.payment-method button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.payment-method button:active {
+  transform: translateY(0);
+}
+
+.payment-method button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+}
+.verifyButton {
+  margin-top: 10px;
+  background-color: #007bff;
+}

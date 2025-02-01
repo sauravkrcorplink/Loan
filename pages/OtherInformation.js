@@ -161,14 +161,20 @@ Education Qualification:
 
          <label className={styles.formLabel}>
            Education Qualification:
-           <input
-             type="text"
-             name="educationQualification"
-             value={formData.educationQualification}
-             onChange={handleInputChange}
-             required
-             className={styles.inputBox}
-           />
+           <select
+            name="educationQualification"
+            value={formData.educationQualification}
+            onChange={handleInputChange}
+            required
+            className={styles.inputBox}
+          >
+            <option value="">Select</option>
+            <option value="less10thpass">Less 10th Pass</option>
+            <option value="10thpass">10th Pass</option>
+            <option value="12thpass">12th Pass</option>
+            <option value="graduate">Graduate</option>
+            <option value="postgraduate">Post Graduate</option>
+          </select>
          </label>
 
          <label className={styles.formLabel}>

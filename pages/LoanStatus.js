@@ -5,7 +5,7 @@ export default function LoanStatus() {
   const router = useRouter();
 
   const handleBackToDashboard = () => {
-    router.push("/dashboard"); // Adjust this route as needed for your app's dashboard
+    router.push("/EmandatePage"); // Adjust this route as needed for your app's dashboard
   };
   const handleLoanManagement = () => {
     router.push("/LoanManagement");
@@ -29,7 +29,7 @@ export default function LoanStatus() {
       </div>
 
       <button onClick={handleBackToDashboard} className={styles.dashboardButton}>
-        Back to Dashboard
+        E - mandate Page
       </button>
       <button onClick={handleLoanManagement} className={styles.loan}>
         Loan Management

@@ -45,7 +45,7 @@ export default function Dashboard() {
             </div>
           </div>
             <div className={styles.bell}>
-            <i class="bi bi-bell"></i>
+            <i className="bi bi-bell"></i>
             </div>
         </div>
 

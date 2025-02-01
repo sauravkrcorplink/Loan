@@ -74,7 +74,7 @@ export default function LoginPage() {
   return (
     <div className={styles.pageContainer}>
       <div className={styles.card}>
-        <h1 className={styles.title}>LoanOne</h1>
+        <h1 className={styles.title}>Loan1</h1>
         {!showOtpDialog ? (
           <form className={styles.loginForm} onSubmit={handleLogin}>
             <label htmlFor="mobile" className={styles.label}>

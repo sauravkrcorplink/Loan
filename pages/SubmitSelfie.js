@@ -1,22 +1,23 @@
 import { useState, useRef } from "react";
-import { useRouter } from "next/router"; // Import useRouter
+import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "../styles/SubmitSelfie.module.css";
 
 export default function SubmitSelfie() {
-  const [selfie, setSelfie] = useState(null); // Stores the captured selfie
-  const [cameraOpen, setCameraOpen] = useState(false); // Controls camera visibility
-  const [stream, setStream] = useState(null); // Stores media stream
-  const videoRef = useRef(null); // Ref for the video element
-  const canvasRef = useRef(null); // Ref for the canvas element
-  const router = useRouter(); // Initialize router
+  const [selfie, setSelfie] = useState(null);
+  const [cameraOpen, setCameraOpen] = useState(false);
+  const [stream, setStream] = useState(null);
+  const [facingMode, setFacingMode] = useState("user"); // 'user' for front camera, 'environment' for back camera
+  const videoRef = useRef(null);
+  const canvasRef = useRef(null);
+  const router = useRouter();
 
-  // Open the camera
+  // Open the camera with the specified facing mode
   const handleOpenCamera = async () => {
     setCameraOpen(true);
     try {
       const mediaStream = await navigator.mediaDevices.getUserMedia({
-        video: true,
+        video: { facingMode: facingMode },
       });
       setStream(mediaStream);
       if (videoRef.current) {
@@ -27,32 +28,35 @@ export default function SubmitSelfie() {
     }
   };
 
+  // Switch between front and back cameras
+  const handleSwitchCamera = () => {
+    if (stream) {
+      stream.getTracks().forEach((track) => track.stop()); // Stop the current stream
+    }
+    setFacingMode((prevMode) => (prevMode === "user" ? "environment" : "user")); // Toggle between front and back cameras
+    handleOpenCamera(); // Reopen the camera with the new facing mode
+  };
+
   // Take a photo
   const handleTakePhoto = () => {
     if (videoRef.current && canvasRef.current) {
       const context = canvasRef.current.getContext("2d");
-
-      // Draw the video frame on the canvas
       context.drawImage(videoRef.current, 0, 0, canvasRef.current.width, canvasRef.current.height);
-
-      // Create an oval mask
       context.globalCompositeOperation = "destination-in";
       context.beginPath();
       context.ellipse(
-        canvasRef.current.width / 2, // Center X
-        canvasRef.current.height / 2, // Center Y
-        canvasRef.current.width / 2, // Horizontal radius
-        canvasRef.current.height / 2, // Vertical radius
+        canvasRef.current.width / 2,
+        canvasRef.current.height / 2,
+        canvasRef.current.width / 2,
+        canvasRef.current.height / 2,
         0,
         0,
         2 * Math.PI
       );
       context.fill();
-
-      // Get the oval-shaped image
       const imageData = canvasRef.current.toDataURL("image/png");
-      setSelfie(imageData); // Save the captured image
-      handleCloseCamera(); // Stop camera feed
+      setSelfie(imageData);
+      handleCloseCamera();
     }
   };
 
@@ -67,13 +71,13 @@ export default function SubmitSelfie() {
 
   // Handle retake selfie
   const handleRetake = () => {
-    setSelfie(null); // Clear the captured image
-    handleOpenCamera(); // Reopen the camera
+    setSelfie(null);
+    handleOpenCamera();
   };
 
   // Handle Selfie Submission
   const handleSubmit = () => {
-    router.push("/AddressConfirmation"); // Navigate to the next page on success
+    router.push("/AddressConfirmation");
   };
 
   return (
@@ -82,11 +86,7 @@ export default function SubmitSelfie() {
       <div className={styles.progressContainer}>
         {[5, 6, 7, 8].map((step, index) => (
           <div key={index} className={styles.step}>
-            <div
-              className={`${styles.circle} ${
-                step === 5 ? styles.activeCircle : ""
-              }`}
-            >
+            <div className={`${styles.circle} ${step === 5 ? styles.activeCircle : ""}`}>
               {step}
             </div>
             {step !== 8 && <div className={styles.line}></div>}
@@ -100,16 +100,18 @@ export default function SubmitSelfie() {
 
       {/* Selfie Section */}
       <div className={styles.selfieSection}>
+        <p style={{ marginBottom: "20px" }}>Putting Your Face inside it and clear the background also</p>
+
         {/* Oval Selfie Placeholder */}
         <div className={styles.ovalShape}>
           {selfie ? (
-            <Image 
-              src={selfie} 
-              alt="Selfie" 
-              className={styles.selfieImage} 
-              width={200} // Replace with your desired width
-              height={250} // Replace with your desired height
-              unoptimized // Use this if `selfie` is a base64 string
+            <Image
+              src={selfie}
+              alt="Selfie"
+              className={styles.selfieImage}
+              width={200}
+              height={250}
+              unoptimized
             />
           ) : (
             cameraOpen && <video ref={videoRef} autoPlay playsInline className={styles.video}></video>
@@ -122,16 +124,17 @@ export default function SubmitSelfie() {
             Selfie
           </button>
         )}
-
         {cameraOpen && (
           <div className={styles.cameraControls}>
             <canvas ref={canvasRef} width="300" height="300" className={styles.canvas}></canvas>
             <button className={styles.readyButton} onClick={handleTakePhoto}>
               Ready
             </button>
+            <button className={styles.switchCameraButton} onClick={handleSwitchCamera} style={{marginLeft:'7px'}}>
+              Switch Camera
+            </button>
           </div>
         )}
-
         {selfie && (
           <button className={styles.retakeButton} onClick={handleRetake}>
             Retake
@@ -146,6 +149,157 @@ export default function SubmitSelfie() {
     </div>
   );
 }
+
+
+// import { useState, useRef } from "react";
+// import { useRouter } from "next/router"; // Import useRouter
+// import Image from "next/image";
+// import styles from "../styles/SubmitSelfie.module.css";
+
+// export default function SubmitSelfie() {
+//   const [selfie, setSelfie] = useState(null); // Stores the captured selfie
+//   const [cameraOpen, setCameraOpen] = useState(false); // Controls camera visibility
+//   const [stream, setStream] = useState(null); // Stores media stream
+//   const videoRef = useRef(null); // Ref for the video element
+//   const canvasRef = useRef(null); // Ref for the canvas element
+//   const router = useRouter(); // Initialize router
+
+//   // Open the camera
+//   const handleOpenCamera = async () => {
+//     setCameraOpen(true);
+//     try {
+//       const mediaStream = await navigator.mediaDevices.getUserMedia({
+//         video: true,
+//       });
+//       setStream(mediaStream);
+//       if (videoRef.current) {
+//         videoRef.current.srcObject = mediaStream;
+//       }
+//     } catch (error) {
+//       console.error("Error accessing camera:", error);
+//     }
+//   };
+
+//   // Take a photo
+//   const handleTakePhoto = () => {
+//     if (videoRef.current && canvasRef.current) {
+//       const context = canvasRef.current.getContext("2d");
+
+//       // Draw the video frame on the canvas
+//       context.drawImage(videoRef.current, 0, 0, canvasRef.current.width, canvasRef.current.height);
+
+//       // Create an oval mask
+//       context.globalCompositeOperation = "destination-in";
+//       context.beginPath();
+//       context.ellipse(
+//         canvasRef.current.width / 2, // Center X
+//         canvasRef.current.height / 2, // Center Y
+//         canvasRef.current.width / 2, // Horizontal radius
+//         canvasRef.current.height / 2, // Vertical radius
+//         0,
+//         0,
+//         2 * Math.PI
+//       );
+//       context.fill();
+
+//       // Get the oval-shaped image
+//       const imageData = canvasRef.current.toDataURL("image/png");
+//       setSelfie(imageData); // Save the captured image
+//       handleCloseCamera(); // Stop camera feed
+//     }
+//   };
+
+//   // Close the camera feed
+//   const handleCloseCamera = () => {
+//     if (stream) {
+//       stream.getTracks().forEach((track) => track.stop());
+//       setStream(null);
+//     }
+//     setCameraOpen(false);
+//   };
+
+//   // Handle retake selfie
+//   const handleRetake = () => {
+//     setSelfie(null); // Clear the captured image
+//     handleOpenCamera(); // Reopen the camera
+//   };
+
+//   // Handle Selfie Submission
+//   const handleSubmit = () => {
+//     router.push("/AddressConfirmation"); // Navigate to the next page on success
+//   };
+
+//   return (
+//     <div className={styles.container}>
+//       {/* Progress Indicator */}
+//       <div className={styles.progressContainer}>
+//         {[5, 6, 7, 8].map((step, index) => (
+//           <div key={index} className={styles.step}>
+//             <div
+//               className={`${styles.circle} ${
+//                 step === 5 ? styles.activeCircle : ""
+//               }`}
+//             >
+//               {step}
+//             </div>
+//             {step !== 8 && <div className={styles.line}></div>}
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* Heading and Subheading */}
+//       <h1 className={styles.heading}>Submit Your Selfie</h1>
+//       <p className={styles.subheading}>Your Data is Completely Secure with us</p>
+
+//       {/* Selfie Section */}
+//       <div className={styles.selfieSection}>
+//       <p style={{marginBottom:'20px'}}>Putting Your Face inside it and clear the background also</p>
+//         {/* Oval Selfie Placeholder */}
+//         <div className={styles.ovalShape}>
+//           {selfie ? (
+//             <Image 
+//               src={selfie} 
+//               alt="Selfie" 
+//               className={styles.selfieImage} 
+//               width={200} // Replace with your desired width
+//               height={250} // Replace with your desired height
+//               unoptimized // Use this if `selfie` is a base64 string
+//             />
+//           ) : (
+//             cameraOpen && <video ref={videoRef} autoPlay playsInline className={styles.video}></video>
+//           )}
+//         </div>
+
+//         {/* Camera and Buttons */}
+//         {!cameraOpen && !selfie && (
+//           <button className={styles.selfieButton} onClick={handleOpenCamera}>
+//             Selfie
+//           </button>
+//         )}
+
+//         {cameraOpen && (
+//           <div className={styles.cameraControls}>
+//             <canvas ref={canvasRef} width="300" height="300" className={styles.canvas}></canvas>
+//             <button className={styles.readyButton} onClick={handleTakePhoto}>
+//               Ready
+//             </button>
+//           </div>
+//         )}
+
+//         {selfie && (
+//           <button className={styles.retakeButton} onClick={handleRetake}>
+//             Retake
+//           </button>
+//         )}
+//       </div>
+
+//       {/* Next Button */}
+//       <button className={styles.nextButton} disabled={!selfie} onClick={handleSubmit}>
+//         Next
+//       </button>
+//     </div>
+//   );
+// }
 
 
 // import { useState, useRef } from "react";

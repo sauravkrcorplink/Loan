@@ -1,3 +1,73 @@
+// import { useState } from "react";
+// import { useRouter } from "next/router";
+// import styles from "../styles/AadharVerification.module.css";
+// import Image from "next/image";
+
+// export default function AadharVerification() {
+//   const [aadharNumber, setAadharNumber] = useState("");
+//   const router = useRouter(); // Use the useRouter hook for navigation
+
+//   const validateAadhar = (aadhar) => /^[0-9]{12}$/.test(aadhar);
+
+//   const handleContinue = () => {
+//     if (!validateAadhar(aadharNumber)) {
+//       alert("Please enter a valid 12-digit Aadhaar number.");
+//       return;
+//     }
+//     console.log("Aadhaar number validated. Proceeding...");
+//     const panNumber = router.query.pan; // Get PAN number from query parameter
+//     router.push(`/VerifyOTP?pan=${panNumber}&aadhar=${aadharNumber}`); // Redirect to the Verify OTP page with PAN and Aadhaar numbers
+//   };
+
+//   return (
+//     <div className={styles.container}>
+//       {/* Progress Indicator */}
+//       <div className={styles.progressContainer}>
+//         {[1, 2, 3, 4].map((step, index) => (
+//           <div key={index} className={styles.step}>
+//             <div className={`${styles.circle} ${step === 3 ? styles.activeCircle : ""}`}>
+//               {step}
+//             </div>
+//             {step !== 4 && <div className={styles.line}></div>}
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* Heading and Subheading */}
+//       <h1 className={styles.heading}>Complete your KYC</h1>
+//       <p className={styles.subheading}>Your Data is Completely Secure with us</p>
+
+//       {/* Aadhaar Card Example Image */}
+//       <div className={styles.exampleImage}>
+//         <Image src="/images/aadharcard.png" width={600} height={500} alt="Aadhar Card" />
+//         <div className={styles.highlightCircle}></div>
+//         <p className={styles.imageCaption}>Example Aadhar Number: 123456789012</p>
+//       </div>
+
+//       {/* Aadhaar Input Field */}
+//       <div className={styles.inputGroup}>
+//         <label htmlFor="aadharNumber" className={styles.label}>Enter Aadhaar Number</label>
+//         <input
+//           id="aadharNumber"
+//           type="text"
+//           className={styles.input}
+//           placeholder="Enter your 12-digit Aadhaar number"
+//           value={aadharNumber}
+//           onChange={(e) => setAadharNumber(e.target.value.replace(/[^0-9]/g, ""))} // Allow only numeric input
+//           maxLength={12} // Limit input to 12 characters
+//         />
+//       </div>
+
+//       {/* Continue Button */}
+//       <button className={styles.continueButton} onClick={handleContinue}>
+//         Continue
+//       </button>
+//     </div>
+//   );
+// }
+
+
+
 import { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/AadharVerification.module.css";

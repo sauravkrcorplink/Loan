@@ -1,0 +1,244 @@
+/* styles/LoanApprovalProcess.module.css */
+.container {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #f0f4f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.header {
+  /* background-color: #1e3a8a; */
+  color: white;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+.content {
+  padding: 20px;
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.content h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+.progressBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.step {
+  width: 20px; /* Increased size */
+  height: 20px; /* Increased size */
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Added for text positioning */
+}
+.completed {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+.line {
+  flex: 1;
+  height: 2px;
+  background-color: #ccc;
+  margin: 0 5px;
+}
+.stepText {
+  font-size: 10px;
+  color: black;
+  position: absolute; /* Position the text absolutely within the step */
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+.reviewButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+}
+.reviewButton:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+/* styles/LoanApprovalProcess.module.css
+.container {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #f0f4f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+.content {
+  padding: 20px;
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.content h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+.progressBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.step {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  border: 2px solid #ccc;
+}
+.completed {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+.line {
+  flex: 1;
+  height: 2px;
+  background-color: #ccc;
+  margin: 0 5px;
+}
+.reviewButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.reviewButton:hover {
+  background-color: #0056b3;
+} */
+
+
+
+/* styles/LoanApprovalProcess.module.css
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: 26px;
+    color: #333;
+    font-weight: bold;
+  }
+  .content {
+    text-align: center;
+    padding: 10px 20px;
+  }
+  .content h2 {
+    font-size: 22px;
+    color: #555;
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
+  .progressBar {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 10px;
+    background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+    border-radius: 10px;
+  }
+  .step {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin: 0 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #ffffff;
+  }
+  .completed {
+    background-color: #4caf50;
+    color: white;
+    border-color: #4caf50;
+  }
+  .reviewButton {
+    padding: 12px 24px;
+    background-color: #f0ad4e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+  .reviewButton:hover {
+    background-color: #e09942;
+  }
+  .featuredTiles {
+    margin: 20px 0;
+  }
+  .tile {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  .tile h3 {
+    font-size: 18px;
+    color: #333;
+  }
+  .tile p {
+    font-size: 14px;
+    color: #555;
+  }
+   */

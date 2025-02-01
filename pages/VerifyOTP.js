@@ -1,3 +1,165 @@
+// import { useState, useEffect, useRef } from "react";
+// import { useRouter } from "next/router";
+// import styles from "../styles/VerifyOTP.module.css";
+// import Image from "next/image";
+
+// export default function VerifyOTP() {
+//   const [otp, setOtp] = useState(Array(6).fill("")); // OTP digits
+//   const [timer, setTimer] = useState(59); // Countdown timer
+//   const [error, setError] = useState(""); // Error message
+//   const [nameMatchResult, setNameMatchResult] = useState(null); // Name Match Result
+//   const router = useRouter(); // For navigation
+
+//   const correctOtp = "123456"; // Predefined correct OTP
+
+//   // Refs for OTP inputs
+//   const inputRefs = useRef([]);
+
+//   // Countdown Timer Logic
+//   useEffect(() => {
+//     console.log("Timer updated:", timer);
+//     const countdown = setInterval(() => {
+//       setTimer((prevTimer) => (prevTimer > 0 ? prevTimer - 1 : 0));
+//     }, 1000);
+
+//     return () => clearInterval(countdown);
+//   }, []);
+
+//   // Handle OTP Input Changes
+//   const handleInputChange = (index, value) => {
+//     if (isNaN(value)) return; // Ignore non-numeric input
+
+//     const newOtp = [...otp];
+//     newOtp[index] = value.slice(-1); // Ensure only 1 digit per box
+//     setOtp(newOtp);
+
+//     // Automatically focus the next input
+//     if (value && index < otp.length - 1) {
+//       inputRefs.current[index + 1]?.focus(); // Use ref to focus next input
+//     }
+//   };
+
+//   const handleSubmit = async () => {
+//     const OtpCode = otp.join("");
+//     if (OtpCode === correctOtp) {
+//       try {
+//         // Fetch Name Match API result
+//         const { pan, aadhar } = router.query; // Assuming PAN and Aadhaar numbers are passed as query parameters
+//         const response = await fetch("/api/nameMatch", {
+//           method: "POST",
+//           headers: {
+//             "Content-Type": "application/json",
+//           },
+//           body: JSON.stringify({ panNumber: pan, aadharNumber: aadhar }),
+//         });
+  
+//         const data = await response.json();
+  
+//         if (data.match) {
+//           setNameMatchResult("Name Match Successful");
+//           router.push("/SubmitSelfie"); // Navigate to next step
+//         } else {
+//           setNameMatchResult("Name Match Failed. Please check your details.");
+//         }
+//       } catch (error) {
+//         console.error("Error fetching Name Match API:", error);
+//         setError("An error occurred while fetching the Name Match API. Please try again.");
+//       }
+//     } else {
+//       setError("Incorrect OTP. Please try again.");
+//     }
+//   };
+  
+
+//   // Resend OTP and Reset Timer
+//   const handleResendOTP = () => {
+//     setOtp(Array(6).fill("")); // Clear OTP inputs
+//     setTimer(59); // Restart the timer
+//     setError(""); // Clear error message
+//     console.log("OTP resent");
+//   };
+
+//   return (
+//     <div className={styles.container}>
+//       {/* Progress Indicator */}
+//       <div className={styles.progressContainer}>
+//         {[1, 2, 3, 4].map((step, index) => (
+//           <div key={index} className={styles.step}>
+//             <div className={`${styles.circle} ${step === 4 ? styles.activeCircle : ""}`}>
+//               {step}
+//             </div>
+//             {step !== 4 && <div className={styles.line}></div>}
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* Heading and Subheading */}
+//       <h1 className={styles.heading}>Complete your KYC</h1>
+//       <p className={styles.subheading}>Your Data is Completely Secure with us</p>
+
+//       {/* OTP Image */}
+//       <div className={styles.otpImage}>
+//         <Image src="/images/otp.png" width={300} height={200} alt="OTP Verification" />
+//       </div>
+
+//       {/* OTP Section */}
+//       <h2 className={styles.otpHeading}>Verify Aadhaar OTP</h2>
+//       <p className={styles.otpDescription}>
+//         A six-digit code was sent to your Aadhaar-registered Mobile Number
+//       </p>
+//       <p className={styles.otpInstruction}>Kindly enter the code to continue.</p>
+
+//       {/* OTP Input Boxes */}
+//       <div className={styles.otpContainer}>
+//         {otp.map((digit, index) => (
+//           <input
+//             key={index}
+//             ref={(el) => (inputRefs.current[index] = el)} // Set ref for each input
+//             type="text"
+//             maxLength="1"
+//             className={styles.otpInput}
+//             value={digit}
+//             onChange={(e) => handleInputChange(index, e.target.value)}
+//             onFocus={(e) => e.target.select()}
+//             onKeyDown={(e) => {
+//               if (e.key === "Backspace" && index > 0 && !otp[index]) {
+//                 inputRefs.current[index - 1]?.focus(); // Use ref to focus previous input
+//               }
+//             }}
+//           />
+//         ))}
+//       </div>
+
+//       {/* Error Message */}
+//       {error && <p className={styles.errorMessage}>{error}</p>}
+
+//       {/* Name Match Result */}
+//       {nameMatchResult && <p className={styles.result}>{nameMatchResult}</p>}
+
+//       {/* Resend OTP and Timer */}
+//       <div className={styles.resendContainer}>
+//         <button
+//           className={styles.resendButton}
+//           onClick={handleResendOTP}
+//           disabled={timer > 0}
+//         >
+//           Resend OTP
+//         </button>
+//         <span className={styles.timer}>
+//           {timer > 0 ? `00:${timer.toString().padStart(2, "0")}` : "Ready"}
+//         </span>
+//       </div>
+
+//       {/* Next Button */}
+//       <button className={styles.continueButton} onClick={handleSubmit}>
+//         Next
+//       </button>
+//     </div>
+//   );
+// }
+
+
+
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/VerifyOTP.module.css";
