@@ -53,13 +53,16 @@ const EmandatePage = () => {
         <div style={{
           textAlign: 'center',
           marginTop: '20px',
-          background: 'green',
+          // background: 'green',
+          background: "url('/images/17.png') no-repeat center center", 
+  backgroundSize: 'cover', 
           padding: '20px',
           borderRadius: '16px',
           width: '100%',
+          height: '100vh'
           // maxWidth: '400px',
         }}>
-          <h4>Choose Payment Method</h4>
+          <h3 style={{marginTop:'90px', color:'red'}}>Choose Payment Method</h3>
           <div style={{
             margin: '10px',
             padding: '15px 30px',
@@ -71,8 +74,8 @@ const EmandatePage = () => {
             // width: '80%',
             // maxWidth: '600px',
           }}>
-          <button onClick={() => handlePaymentSelection('netbanking')}>NetBanking</button>
-          <button onClick={() => handlePaymentSelection('upi')} style={{marginLeft: '20px'}}>UPI Payment</button>
+          <button onClick={() => handlePaymentSelection('netbanking')} style={{background:'blue', color:'white', fontSize:'18px'}}>NetBanking</button>
+          <button onClick={() => handlePaymentSelection('upi')} style={{marginLeft: '10px',background:'green', color:'white',fontSize:'18px'}}>UPI Payment</button>
           </div>
         </div>
       )}

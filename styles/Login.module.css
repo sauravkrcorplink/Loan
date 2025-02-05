@@ -1,192 +1,238 @@
-/* Center card on the page */
+/* .pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 85vh; 
+  background: linear-gradient(to bottom, #f9fafb, #dbeafe);
+  margin: 0;
+  padding-top: 4vh;
+} */
+ 
 .pageContainer {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Adjusts the card closer to the top */
-    min-height: 85vh; /* Reduced height to remove excessive space */
-    background: linear-gradient(to bottom, #f9fafb, #dbeafe); /* Light gradient */
-    margin: 0;
-    padding-top: 4vh; /* Slightly moves card down for better appearance */
-  }
-  
-  /* Card styling */
-  .card {
-    width: 400px;
-    padding: 20px;
-    background: #007bff;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-bottom: 5vh; /* Adjusted margin to reduce excess space at the bottom */
-    /* Slight negative margin to move the card higher */
-  }
-  
-  /* Title */
-  .title {
-    font-size: 37px;
-    font-weight: bold;
-    color: #0A1023; /* Dark blue */
-    margin-bottom: 20px;
-  }
-  
-  /* Login Form Styling */
-  .loginForm {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    color: white;
-    text-align: left;
-  }
-  .loginForm p {
-    color: white;
-    font-size: 12px;
-  }
-  
-  .input {
-    height: 40px;
-    padding: 8px;
-    border: 1px solid #d1d5db;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align:center;
-  }
-  
-  .loginButton {
-    height: 40px;
-    background-color: #2563eb; /* Blue */
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: 0.3s;
-  }
-  
-  .loginButton:hover {
-    background-color: #1d4ed8; /* Darker blue */
-  }
-  
-  /* OTP Section */
-  .otpContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-  }
-  
-  .otpTitle {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: white;
-    /* margin-bottom: 10px; */
-  }
-  
-  .otpSubtitle {
-    font-size: 1rem;
-    color: white;
-    /* margin-bottom: 10px; */
-  }
-  
-  .otpInstruction {
-    font-size: 1rem;
-    color: white;
-    /* margin-bottom: 20px; */
-  }
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh; /* Full viewport height */
+  width: 100%; /* Ensures full width */
+  background: url('/images/7.jpg') no-repeat center center;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  background-position: center;
+  margin: 0;
+  padding-top: 4vh;
+}
 
-  .otpInputContainer {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .otpInput {
-    width: 55px;
-    height: 50px;
-    font-size: 24px;
-    text-align: center;
-    border: 1px solid #d1d5db;
-    border-radius: 5px;
-  }
-  
-  .nextButton {
-    height: 40px;
-    background-color: #004aad;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .nextButton:hover {
-    background-color: #1d4ed8;
-  }
-  
-  /* Error Message */
-  .errorMessage {
-    color: #b91c1c;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
-  /* Resend and Timer */
-  .otpFooter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .resendButton {
-    background: none;
-    color: #E0E0E0;
-    border: none;
-    font-size: 14px;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  
-  .resendButton:disabled {
-    color: #E0E0E0;
-    /* color: #9ca3af; Gray */
-    cursor: not-allowed;
-  }
-  
-  .timer {
-    font-size: 14px;
-    color: #E0E0E0; /* Dark gray */
-  }
-  
-  /* Media Queries */
-  @media screen and (max-width: 768px) {
-    .pageContainer {
+
+
+
+.card {
+  width: 400px;
+  padding: 20px;
+  background: #007bff; /* Fallback color */
+  background-image: url('/images/background.jpg'); /* Path to your image */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 5vh;
+  position: relative; /* Ensures child elements are positioned correctly */
+  overflow: hidden; /* Prevents overflow of child elements */
+}
+
+/* Overlay for better readability */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 1; /* Ensures the overlay is above the background image */
+  border-radius: 15px; /* Matches the card's border radius */
+}
+
+/* Ensure all content inside the card is above the overlay */
+.title,
+.loginForm,
+.otpContainer,
+.otpTitle,
+.otpSubtitle,
+.otpInstruction,
+.otpInputContainer,
+.nextButton,
+.errorMessage,
+.otpFooter,
+.resendButton,
+.timer {
+  position: relative;
+  z-index: 2; /* Ensures content is above the overlay */
+}
+
+/* Title */
+.title {
+  font-size: 37px;
+  font-weight: bold;
+  color: #0A1023; /* Dark blue */
+  margin-bottom: 20px;
+}
+
+/* Login Form Styling */
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: white;
+  text-align: left;
+}
+
+.loginForm p {
+  color: white;
+  font-size: 12px;
+}
+
+.input {
+  height: 40px;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.loginButton {
+  height: 40px;
+  background-color: #2563eb; /* Blue */
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.loginButton:hover {
+  background-color: #1d4ed8; /* Darker blue */
+}
+
+/* OTP Section */
+.otpContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.otpTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.otpSubtitle {
+  font-size: 1rem;
+  color: white;
+}
+
+.otpInstruction {
+  font-size: 1rem;
+  color: white;
+}
+
+.otpInputContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.otpInput {
+  width: 55px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+}
+
+.nextButton {
+  height: 40px;
+  background-color: #004aad;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nextButton:hover {
+  background-color: #1d4ed8;
+}
+
+/* Error Message */
+.errorMessage {
+  color: #b91c1c;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Resend and Timer */
+.otpFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resendButton {
+  background: none;
+  color: #E0E0E0;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.resendButton:disabled {
+  color: #E0E0E0;
+  cursor: not-allowed;
+}
+
+.timer {
+  font-size: 14px;
+  color: #E0E0E0; /* Dark gray */
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .pageContainer {
       align-items: center; /* Center the card on smaller screens */
       padding-top: 0;
       min-height: 90vh; /* Adjust height for smaller screens */
-    }
-  
-    .card {
+  }
+
+  .card {
       margin-top: 0; /* Reset margin for mobile */
       margin-bottom: 3vh; /* Adjust bottom margin for better spacing */
       width: 90%; /* Adjust width for smaller screens */
-    }
   }
-  
-  @media screen and (max-width: 480px) {
-    .title {
+}
+
+@media screen and (max-width: 480px) {
+  .title {
       font-size: 24px; /* Reduce font size for smaller devices */
-    }
-  
-    .otpInput {
-      /* width: 45px; */
+  }
+
+  .otpInput {
       height: 45px;
       font-size: 20px;
-    }
-  
-    .loginButton, .nextButton {
-      font-size: 14px;
-    }
   }
+
+  .loginButton, .nextButton {
+      font-size: 14px;
+  }
+}
   
   
 

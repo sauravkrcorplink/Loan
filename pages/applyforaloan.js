@@ -78,9 +78,9 @@ export default function ApplyForALoan() {
             <option value="Medical Loan">Medical Loan</option>
             <option value="Education Loan">Education Loan</option>
             <option value="House Loan">House Loan</option>
-            <option value="House Loan">Business Loan</option>
-            <option value="House Loan">Car Loan</option>
-            <option value="House Loan">Personal Loan</option>
+            <option value="Business Loan">Business Loan</option>
+            <option value="Car Loan">Car Loan</option>
+            <option value="Personal Loan">Personal Loan</option>
           </select>
         </div>
 
